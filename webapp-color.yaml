@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp-color
+  labels:
+    app: webapp-color
+spec:
+  containers:
+    - name: webapp-color
+      image: nginx:1.21.6
+      env:
+        - name: APP_COLOR
+          valueFrom:
+            configMapKeyRef:
+              name: webapp-config-map
+              key: APP_COLOR
