@@ -1,2 +1,2 @@
-# k8s
+# laps
 k8s yaml configuration files
