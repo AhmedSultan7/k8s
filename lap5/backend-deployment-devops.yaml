@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: haproxy-deployment-devops
+  name: backend-deployment-devops
   namespace: haproxy-controller-devops
   labels:
     run: ingress-default-backend
@@ -16,7 +16,7 @@ spec:
         run: ingress-default-backend
     spec:
       containers:
-        - name: backend-container
+        - name: backend-container-devops
           image: gcr.io/google_containers/defaultbackend:1.0
           ports:
             - name: http
