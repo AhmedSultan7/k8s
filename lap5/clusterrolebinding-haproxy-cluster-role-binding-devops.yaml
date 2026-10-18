@@ -3,12 +3,11 @@ kind: ClusterRoleBinding
 metadata:
   name: haproxy-cluster-role-binding-devops
   namespace: haproxy-controller-devops
-subjects:
-- kind: ServiceAccount
-  name: haproxy-service-account-devops
-  namespace: haproxy-controller-devops
 roleRef:
-  apiGroups: ["rbac.authorization.k8s.io"]
+  apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: haproxy-service-account-devops
-
+  name: haproxy-cluster-role-devops
+subjects:
+  - kind: ServiceAccount
+    name: haproxy-service-account-devops
+    namespace: haproxy-controller-devops
