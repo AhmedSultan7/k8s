@@ -1,3 +1,4 @@
+# service-backend-devops.yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,7 +10,7 @@ spec:
   selector:
     run: ingress-default-backend
   ports:
-    - protocol: TCP
+    - name: port-backend
+      protocol: TCP
       port: 8080
       targetPort: 8080
-      name: port-backend
