@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  haproxy-ingress-devop
+  name: haproxy-ingress-devops
   namespace: haproxy-controller-devops
   labels:
     run: haproxy-ingress
@@ -34,7 +34,7 @@ spec:
             containerPort: 80
           - name: https
             containerPort: 443
-          - name: stats
+          - name: stat
             containerPort: 1024
           env:
             - name: TZ
